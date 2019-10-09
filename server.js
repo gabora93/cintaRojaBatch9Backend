@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 var app = express();
 const Alumno = require('./src/models/alumnoModel');
 
+const PORT = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
@@ -107,8 +108,8 @@ app.put('/', (req,res)=>{
     res.send("Hola mundo desde PUT")
 })
 
-app.listen(6430, function(){
-    console.log("Corriendo en el puerto 3000");
+app.listen(PORT, function(){
+    console.log("Corriendo en el puerto" + PORT);
 });
 
 
